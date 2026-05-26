@@ -1,0 +1,606 @@
+<!doctype html>
+<html lang="id" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengumuman Hasil TKA</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .app-shell {
+      min-height: 100%;
+      width: 100%;
+      overflow: auto;
+      position: relative;
+    }
+
+    .batik-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.16;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.45) 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 30%, rgba(255,255,255,.35) 0 2px, transparent 3px),
+        radial-gradient(circle at 35% 80%, rgba(255,255,255,.35) 0 2px, transparent 3px),
+        linear-gradient(135deg, transparent 0 46%, rgba(255,255,255,.18) 47% 53%, transparent 54% 100%);
+      background-size: 54px 54px, 72px 72px, 68px 68px, 42px 42px;
+    }
+
+    .glass-card {
+      backdrop-filter: blur(18px);
+      box-shadow: 0 28px 80px rgba(15, 23, 42, 0.24);
+    }
+
+    .title-font {
+      font-family: 'Fraunces', serif;
+    }
+
+    .float-in {
+      animation: floatIn 850ms ease both;
+    }
+
+    .float-in-delay {
+      animation: floatIn 850ms ease 140ms both;
+    }
+
+    .float-in-delay-2 {
+      animation: floatIn 850ms ease 260ms both;
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px) scale(.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-show {
+      animation: modalShow 280ms ease both;
+    }
+
+    @keyframes modalShow {
+      from {
+        opacity: 0;
+        transform: translateY(12px) scale(.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .focus-ring:focus-visible {
+      outline: 4px solid rgba(251, 191, 36, .85);
+      outline-offset: 3px;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="appShell" class="app-shell h-full w-full bg-[#0f4c3a] text-[#17322b]">
+   <div class="batik-pattern"></div>
+   <header class="relative w-full px-5 py-5 sm:px-8">
+    <nav class="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/20 bg-white/12 px-5 py-3 text-white shadow-lg">
+     <div class="flex items-center gap-3">
+      <div id="badgeIcon" class="flex h-11 w-11 items-center justify-center rounded-full bg-[#f7c948] text-[#0f4c3a] shadow-md"><i data-lucide="graduation-cap" aria-hidden="true"></i>
+      </div>
+      <div>
+       <p id="navSchoolName" class="font-extrabold leading-tight">SD Islam Al Hikmah Blora</p>
+       <p id="navYear" class="text-sm text-white/78">Tahun Ajaran 2025/2026</p>
+      </div>
+     </div>
+     <div class="hidden items-center gap-2 rounded-full bg-white/14 px-4 py-2 text-sm font-bold sm:flex"><i data-lucide="shield-check" class="h-4 w-4" aria-hidden="true"></i> Pengumuman Resmi
+     </div>
+    </nav>
+   </header>
+   <main class="relative mx-auto grid w-full max-w-6xl gap-7 px-5 pb-8 pt-2 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center">
+    <section class="float-in">
+     <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/14 px-4 py-2 text-sm font-extrabold text-white shadow-lg"><span class="h-2.5 w-2.5 rounded-full bg-[#f7c948]"></span> Informasi Kelulusan dan Nilai
+     </div>
+     <h1 id="pageTitle" class="title-font max-w-3xl text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">Pengumuman Hasil TKA Kelas 6</h1>
+     <p id="academicYear" class="mt-3 text-xl font-extrabold text-[#f7c948]">Tahun Ajaran 2025/2026</p>
+     <p id="introText" class="mt-5 max-w-2xl text-lg font-semibold leading-relaxed text-white/86">Silakan masukkan NISN dan nama lengkap siswa untuk melihat hasil TKA.</p>
+     <div class="mt-7 grid max-w-2xl gap-3 sm:grid-cols-3">
+      <div class="rounded-3xl border border-white/16 bg-white/12 p-4 text-white">
+       <div class="mb-2 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/14"><i data-lucide="book-open" aria-hidden="true"></i>
+       </div>
+       <p class="font-extrabold">Matematika</p>
+       <p class="text-sm text-white/74">Nilai TKA</p>
+      </div>
+      <div class="rounded-3xl border border-white/16 bg-white/12 p-4 text-white">
+       <div class="mb-2 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/14"><i data-lucide="file-text" aria-hidden="true"></i>
+       </div>
+       <p class="font-extrabold">Bahasa Indonesia</p>
+       <p class="text-sm text-white/74">Nilai TKA</p>
+      </div>
+      <div class="rounded-3xl border border-white/16 bg-white/12 p-4 text-white">
+       <div class="mb-2 flex h-10 w-10 items-center justify-center rounded-2xl bg-white/14"><i data-lucide="award" aria-hidden="true"></i>
+       </div>
+       <p class="font-extrabold">Hasil Siswa</p>
+       <p class="text-sm text-white/74">Tabel ringkas</p>
+      </div>
+     </div>
+    </section>
+    <section class="float-in-delay glass-card rounded-[2rem] border border-white/30 bg-[#fffaf0]/95 p-5 sm:p-7">
+     <div class="mb-5 flex items-start justify-between gap-4">
+      <div>
+       <h2 class="title-font text-2xl font-extrabold text-[#17322b]">Cek Hasil Siswa</h2>
+       <p class="mt-1 text-sm font-semibold text-[#17322b]/70">Pastikan data sesuai dengan identitas siswa.</p>
+      </div>
+      <div class="rounded-2xl bg-[#0f4c3a]/10 p-3 text-[#0f4c3a]"><i data-lucide="search-check" aria-hidden="true"></i>
+      </div>
+     </div>
+     <form id="resultForm" class="space-y-5" novalidate>
+      <div><label id="nisnLabel" for="nisnInput" class="mb-2 block font-extrabold text-[#17322b]">NISN</label> <input id="nisnInput" name="nisn" type="text" inputmode="numeric" autocomplete="off" class="focus-ring w-full rounded-2xl border-2 border-[#0f4c3a]/18 bg-white px-4 py-3 text-base font-bold text-[#17322b] shadow-inner transition placeholder:text-[#17322b]/35" placeholder="Contoh: 3156789012" aria-describedby="formHint">
+      </div>
+      <div><label id="nameLabel" for="nameInput" class="mb-2 block font-extrabold text-[#17322b]">Nama Lengkap Siswa</label> <input id="nameInput" name="studentName" type="text" autocomplete="name" class="focus-ring w-full rounded-2xl border-2 border-[#0f4c3a]/18 bg-white px-4 py-3 text-base font-bold text-[#17322b] shadow-inner transition placeholder:text-[#17322b]/35" placeholder="Contoh: Ahmad Zidan Pratama" aria-describedby="formHint">
+      </div>
+      <p id="formHint" class="rounded-2xl bg-[#0f4c3a]/8 px-4 py-3 text-sm font-semibold text-[#17322b]/72">Contoh data demo: NISN <strong>3156789012</strong>, nama <strong>Ahmad Zidan Pratama</strong>.</p>
+      <div id="messageBox" class="hidden rounded-2xl px-4 py-3 text-sm font-extrabold" role="status" aria-live="polite"></div><button id="submitButton" type="submit" class="focus-ring group flex w-full items-center justify-center gap-3 rounded-2xl bg-[#f7c948] px-5 py-4 text-base font-black text-[#0f4c3a] shadow-xl shadow-[#0f4c3a]/15 transition hover:-translate-y-0.5 hover:brightness-105 active:translate-y-0"> <span id="buttonText">Lihat Hasil</span> <i data-lucide="arrow-right" class="transition group-hover:translate-x-1" aria-hidden="true"></i> </button>
+     </form>
+     <p id="footerText" class="mt-5 text-center text-xs font-bold leading-relaxed text-[#17322b]/58">Data hasil bersifat resmi dan dapat digunakan sebagai informasi akademik siswa.</p>
+    </section>
+   </main>
+   <footer class="relative mx-auto w-full max-w-6xl px-5 pb-6 sm:px-8">
+    <div class="float-in-delay-2 rounded-3xl border border-white/18 bg-white/10 px-5 py-4 text-center text-sm font-bold text-white/78">
+     SD Islam Al Hikmah Blora • TKA Kelas 6 • 2025/2026
+    </div>
+   </footer>
+   <div id="resultModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-[#0b241e]/72 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="resultModalTitle">
+    <section class="modal-show max-h-full w-full max-w-4xl overflow-auto rounded-[2rem] border border-white/40 bg-[#fffaf0] p-5 shadow-2xl sm:p-7">
+     <div class="mb-5 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+      <div>
+       <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-[#0f4c3a]/10 px-3 py-1.5 text-sm font-extrabold text-[#0f4c3a]"><i data-lucide="check-circle-2" class="h-4 w-4" aria-hidden="true"></i> Data ditemukan
+       </div>
+       <h2 id="resultModalTitle" class="title-font text-3xl font-extrabold text-[#17322b]">Hasil TKA Siswa</h2>
+       <p class="mt-1 font-semibold text-[#17322b]/70">Berikut ringkasan nilai berdasarkan data yang dimasukkan.</p>
+      </div><button id="closeModalButton" type="button" class="focus-ring inline-flex items-center justify-center rounded-2xl bg-[#17322b] px-4 py-3 font-extrabold text-white transition hover:brightness-110"> <i data-lucide="x" class="mr-2 h-4 w-4" aria-hidden="true"></i> Tutup </button>
+     </div>
+     <div class="overflow-hidden rounded-3xl border border-[#0f4c3a]/16 bg-white shadow-xl">
+      <div class="overflow-auto">
+       <table class="w-full min-w-[720px] border-collapse text-left">
+        <thead>
+         <tr class="bg-[#0f4c3a] text-white">
+          <th class="px-5 py-4 font-black">Nama Siswa</th>
+          <th class="px-5 py-4 font-black">NISN</th>
+          <th class="px-5 py-4 font-black">Mapel Matematika</th>
+          <th class="px-5 py-4 font-black">Bahasa Indonesia</th>
+          <th class="px-5 py-4 font-black">Nilai</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr class="border-t border-[#0f4c3a]/10">
+          <td id="resultName" class="px-5 py-5 font-extrabold text-[#17322b]"></td>
+          <td id="resultNisn" class="px-5 py-5 font-bold text-[#17322b]/78"></td>
+          <td id="resultMath" class="px-5 py-5 font-black text-[#0f4c3a]"></td>
+          <td id="resultIndonesian" class="px-5 py-5 font-black text-[#0f4c3a]"></td>
+          <td class="px-5 py-5"><span id="resultScore" class="inline-flex rounded-full bg-[#f7c948] px-4 py-2 font-black text-[#0f4c3a]"></span></td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+     </div>
+     <div class="mt-5 rounded-3xl bg-[#0f4c3a]/8 p-4 text-sm font-bold leading-relaxed text-[#17322b]/74">
+      Jika terdapat perbedaan data, silakan menghubungi pihak sekolah untuk verifikasi lebih lanjut.
+     </div>
+    </section>
+   </div>
+   <div id="adminModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-[#0b241e]/72 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+    <section class="modal-show max-h-full w-full max-w-4xl overflow-auto rounded-[2rem] border border-white/40 bg-[#fffaf0] p-5 shadow-2xl sm:p-7">
+     <div class="mb-5 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+      <div>
+       <div class="mb-3 inline-flex items-center gap-2 rounded-full bg-[#f7c948]/20 px-3 py-1.5 text-sm font-extrabold text-[#854d0e]"><i data-lucide="settings" class="h-4 w-4" aria-hidden="true"></i> Admin - Input Nilai
+       </div>
+       <h2 id="adminModalTitle" class="title-font text-3xl font-extrabold text-[#17322b]">Kelola Data Nilai Siswa</h2>
+       <p class="mt-1 font-semibold text-[#17322b]/70">Masukkan atau perbarui nilai siswa di sini.</p>
+      </div><button id="closeAdminModalButton" type="button" class="focus-ring inline-flex items-center justify-center rounded-2xl bg-[#17322b] px-4 py-3 font-extrabold text-white transition hover:brightness-110"> <i data-lucide="x" class="mr-2 h-4 w-4" aria-hidden="true"></i> Tutup </button>
+     </div>
+     <div class="mb-5 space-y-3"><label class="block font-extrabold text-[#17322b]">Format: NISN|Nama|NilaiMatematika|NilaiBahasaIndonesia</label> <textarea id="studentDataTextarea" rows="12" class="focus-ring w-full rounded-2xl border-2 border-[#0f4c3a]/18 bg-white px-4 py-3 font-mono text-sm text-[#17322b] shadow-inner" placeholder="0141520149|AHMAD DANIYAL FIRDAUS|85|82
+0147887955|ANINDITA KHAIRINNISWA|91|93
+(satu siswa per baris - nilai akhir otomatis dihitung)"></textarea>
+      <p class="text-xs font-semibold text-[#17322b]/60">Contoh: NISN|Nama Lengkap|Nilai Matematika|Nilai Bahasa Indonesia (nilai akhir = rata-rata)</p>
+     </div><button id="saveDataButton" type="button" class="focus-ring flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0f4c3a] px-5 py-4 font-extrabold text-white transition hover:brightness-110"> <i data-lucide="save" class="h-4 w-4" aria-hidden="true"></i> Simpan Data </button>
+     <div id="adminMessage" class="mt-3 hidden rounded-2xl px-4 py-3 text-sm font-extrabold" role="status" aria-live="polite"></div>
+    </section>
+   </div><button id="adminButton" type="button" class="focus-ring fixed bottom-5 right-5 z-40 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#f7c948] px-4 py-3 font-extrabold text-[#0f4c3a] shadow-lg transition hover:brightness-105" title="Admin Panel"> <i data-lucide="settings" class="h-5 w-5" aria-hidden="true"></i> </button>
+  </div>
+  <script>
+    const defaultConfig = {
+      background_color: "#0f4c3a",
+      surface_color: "#fffaf0",
+      text_color: "#17322b",
+      primary_action_color: "#f7c948",
+      secondary_action_color: "#ffffff",
+      font_family: "Nunito",
+      font_size: 16,
+      school_name: "SD Islam Al Hikmah Blora",
+      page_title: "Pengumuman Hasil TKA Kelas 6",
+      academic_year: "Tahun Ajaran 2025/2026",
+      intro_text: "Silakan masukkan NISN dan nama lengkap siswa untuk melihat hasil TKA.",
+      nisn_label: "NISN",
+      name_label: "Nama Lengkap Siswa",
+      button_text: "Lihat Hasil",
+      result_title: "Hasil TKA Siswa",
+      footer_text: "Data hasil bersifat resmi dan dapat digunakan sebagai informasi akademik siswa.",
+      students_data: "0141520149|AHMAD DANIYAL FIRDAUS|85|82\n0147887955|ANINDITA KHAIRINNISWA|91|93\n0137612440|AQILA PUTRI MAHARANI|88|90\n0147697279|CAHYANI SALSABILA|84|87\n0137810848|FAIZ FAJAR FAADILIHAH|79|81\n0133978610|FAKHWA FAROKHINA|89|88\n3149279441|FATHINA SYAIKA AFRARINI|92|95\n3141534451|FATHIYYA SYAIKA AFRARINI|93|94\n0137127220|FIKAR TRISTAN ADITYA ABRAR|87|85\n0142822253|LIUNA LATIFATUZ ZAHRA|90|92\n3146618079|MAHIRA HASNA KAMILA SALSABILA PUTRY|88|89\n0138879710|MARSAA NUUR SHIDQIYYAH|86|84\n0147844520|MOHAMAD KALIS INDRIYANTO|83|80\n3145029963|MUFIDA SALSABILA|91|90\n3135249898|MUHAMMAD NAUFAL MAROM|85|86\n3135842973|MUHAMMAD SYAIFUL MU'MININ|82|83\n0142104401|MUHAMMAD THORIQ AL FAEYZA|88|87\n0131106214|MUTHIATUN KHOIRUN NISA'|89|91\n0146421995|NAJWA NAIFAH|87|88\n3149970654|NAURA RAYYAN ZAKIYATUZ ZAHRA|94|96\n0134757250|NINA RUWAIDA ATTIH|86|85\n0148707848|RIZQYTA DWIJAYANTI|90|89\n0138532878|SALWA NADIA|84|86\n0147017891|SITI NAILA NUR AZIZAH|88|90\n0134239848|ZAFIRA AZRA HAYFA|92|91"
+    };
+
+    let studentResults = parseStudentData(defaultConfig.students_data);
+
+    function parseStudentData(dataString) {
+      return dataString.split('\n').filter(line => line.trim()).map(line => {
+        const parts = line.split('|');
+        if (parts.length >= 4) {
+          const math = parseInt(parts[2].trim()) || 0;
+          const indonesian = parseInt(parts[3].trim()) || 0;
+          const score = Math.round((math + indonesian) / 2);
+          return {
+            nisn: parts[0].trim(),
+            name: parts[1].trim(),
+            math: math,
+            indonesian: indonesian,
+            score: score
+          };
+        }
+        return null;
+      }).filter(item => item !== null);
+    }
+
+    const elements = {
+      appShell: document.getElementById("appShell"),
+      navSchoolName: document.getElementById("navSchoolName"),
+      navYear: document.getElementById("navYear"),
+      pageTitle: document.getElementById("pageTitle"),
+      academicYear: document.getElementById("academicYear"),
+      introText: document.getElementById("introText"),
+      nisnLabel: document.getElementById("nisnLabel"),
+      nameLabel: document.getElementById("nameLabel"),
+      buttonText: document.getElementById("buttonText"),
+      footerText: document.getElementById("footerText"),
+      resultModalTitle: document.getElementById("resultModalTitle"),
+      submitButton: document.getElementById("submitButton"),
+      resultModal: document.getElementById("resultModal"),
+      closeModalButton: document.getElementById("closeModalButton"),
+      messageBox: document.getElementById("messageBox"),
+      nisnInput: document.getElementById("nisnInput"),
+      nameInput: document.getElementById("nameInput"),
+      resultName: document.getElementById("resultName"),
+      resultNisn: document.getElementById("resultNisn"),
+      resultMath: document.getElementById("resultMath"),
+      resultIndonesian: document.getElementById("resultIndonesian"),
+      resultScore: document.getElementById("resultScore"),
+      adminButton: document.getElementById("adminButton"),
+      adminModal: document.getElementById("adminModal"),
+      closeAdminModalButton: document.getElementById("closeAdminModalButton"),
+      studentDataTextarea: document.getElementById("studentDataTextarea"),
+      saveDataButton: document.getElementById("saveDataButton"),
+      adminMessage: document.getElementById("adminMessage")
+    };
+
+    function normalizeText(value) {
+      return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/\s+/g, " ");
+    }
+
+    function showMessage(message, type) {
+      elements.messageBox.textContent = message;
+      elements.messageBox.classList.remove("hidden");
+      if (type === "error") {
+        elements.messageBox.style.backgroundColor = "rgba(220, 38, 38, 0.12)";
+        elements.messageBox.style.color = "#991b1b";
+      } else {
+        elements.messageBox.style.backgroundColor = "rgba(15, 76, 58, 0.12)";
+        elements.messageBox.style.color = "#0f4c3a";
+      }
+    }
+
+    function hideMessage() {
+      elements.messageBox.classList.add("hidden");
+      elements.messageBox.textContent = "";
+    }
+
+    function showAdminMessage(message, type) {
+      elements.adminMessage.textContent = message;
+      elements.adminMessage.classList.remove("hidden");
+      if (type === "error") {
+        elements.adminMessage.style.backgroundColor = "rgba(220, 38, 38, 0.12)";
+        elements.adminMessage.style.color = "#991b1b";
+      } else {
+        elements.adminMessage.style.backgroundColor = "rgba(15, 76, 58, 0.12)";
+        elements.adminMessage.style.color = "#0f4c3a";
+      }
+    }
+
+    function openResultModal(student) {
+      elements.resultName.textContent = student.name;
+      elements.resultNisn.textContent = student.nisn;
+      elements.resultMath.textContent = student.math;
+      elements.resultIndonesian.textContent = student.indonesian;
+      elements.resultScore.textContent = student.score;
+      elements.resultModal.classList.remove("hidden");
+      elements.resultModal.classList.add("flex");
+      elements.closeModalButton.focus();
+    }
+
+    function closeResultModal() {
+      elements.resultModal.classList.add("hidden");
+      elements.resultModal.classList.remove("flex");
+      elements.submitButton.focus();
+    }
+
+    function openAdminModal() {
+      elements.studentDataTextarea.value = localStorage.getItem("studentData") || defaultConfig.students_data;
+      elements.adminMessage.classList.add("hidden");
+      elements.adminModal.classList.remove("hidden");
+      elements.adminModal.classList.add("flex");
+      elements.studentDataTextarea.focus();
+    }
+
+    function closeAdminModal() {
+      elements.adminModal.classList.add("hidden");
+      elements.adminModal.classList.remove("flex");
+      elements.adminButton.focus();
+    }
+
+    document.getElementById("resultForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nisn = elements.nisnInput.value.trim();
+      const name = elements.nameInput.value.trim();
+
+      if (!nisn || !name) {
+        showMessage("Mohon isi NISN dan nama lengkap siswa terlebih dahulu.", "error");
+        return;
+      }
+
+      const foundStudent = studentResults.find(function(student) {
+        return student.nisn === nisn && normalizeText(student.name) === normalizeText(name);
+      });
+
+      if (!foundStudent) {
+        showMessage("Data belum ditemukan. Pastikan NISN dan nama lengkap sudah benar.", "error");
+        return;
+      }
+
+      hideMessage();
+      openResultModal(foundStudent);
+    });
+
+    elements.closeModalButton.addEventListener("click", closeResultModal);
+    elements.adminButton.addEventListener("click", openAdminModal);
+    elements.closeAdminModalButton.addEventListener("click", closeAdminModal);
+
+    elements.saveDataButton.addEventListener("click", function() {
+      const dataText = elements.studentDataTextarea.value.trim();
+      
+      if (!dataText) {
+        showAdminMessage("Data tidak boleh kosong!", "error");
+        return;
+      }
+
+      const parsed = parseStudentData(dataText);
+      
+      if (parsed.length === 0) {
+        showAdminMessage("Format data tidak valid. Gunakan format: NISN|Nama|NilaiMat|NilaiBahasa|NilaiAkhir", "error");
+        return;
+      }
+
+      studentResults = parsed;
+      localStorage.setItem("studentData", dataText);
+      showAdminMessage("Data berhasil disimpan! (" + parsed.length + " siswa)", "success");
+      
+      setTimeout(function() {
+        closeAdminModal();
+      }, 1500);
+    });
+
+    elements.resultModal.addEventListener("click", function(event) {
+      if (event.target === elements.resultModal) {
+        closeResultModal();
+      }
+    });
+
+    elements.adminModal.addEventListener("click", function(event) {
+      if (event.target === elements.adminModal) {
+        closeAdminModal();
+      }
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        if (!elements.resultModal.classList.contains("hidden")) {
+          closeResultModal();
+        } else if (!elements.adminModal.classList.contains("hidden")) {
+          closeAdminModal();
+        }
+      }
+    });
+
+    // Load saved data from localStorage
+    const savedData = localStorage.getItem("studentData");
+    if (savedData) {
+      studentResults = parseStudentData(savedData);
+    }
+
+    async function onConfigChange(config) {
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+      const primaryActionColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryActionColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      const baseSize = Number(config.font_size || defaultConfig.font_size);
+
+      const schoolName = config.school_name || defaultConfig.school_name;
+      const pageTitle = config.page_title || defaultConfig.page_title;
+      const academicYear = config.academic_year || defaultConfig.academic_year;
+      const introText = config.intro_text || defaultConfig.intro_text;
+      const nisnLabel = config.nisn_label || defaultConfig.nisn_label;
+      const nameLabel = config.name_label || defaultConfig.name_label;
+      const buttonText = config.button_text || defaultConfig.button_text;
+      const resultTitle = config.result_title || defaultConfig.result_title;
+      const footerText = config.footer_text || defaultConfig.footer_text;
+
+      elements.appShell.style.backgroundColor = backgroundColor;
+      elements.navSchoolName.textContent = schoolName;
+      elements.navYear.textContent = academicYear;
+      elements.pageTitle.textContent = pageTitle;
+      elements.academicYear.textContent = academicYear;
+      elements.introText.textContent = introText;
+      elements.nisnLabel.textContent = nisnLabel;
+      elements.nameLabel.textContent = nameLabel;
+      elements.buttonText.textContent = buttonText;
+      elements.resultModalTitle.textContent = resultTitle;
+      elements.footerText.textContent = footerText;
+
+      document.body.style.fontFamily = `${fontFamily}, Nunito, sans-serif`;
+      document.querySelectorAll(".title-font").forEach(function(item) {
+        item.style.fontFamily = `${fontFamily}, Fraunces, serif`;
+      });
+
+      elements.pageTitle.style.fontSize = `${baseSize * 2.75}px`;
+      elements.academicYear.style.fontSize = `${baseSize * 1.25}px`;
+      elements.introText.style.fontSize = `${baseSize * 1.05}px`;
+      elements.nisnLabel.style.fontSize = `${baseSize}px`;
+      elements.nameLabel.style.fontSize = `${baseSize}px`;
+      elements.buttonText.style.fontSize = `${baseSize}px`;
+      elements.footerText.style.fontSize = `${baseSize * 0.78}px`;
+      elements.resultModalTitle.style.fontSize = `${baseSize * 1.9}px`;
+
+      document.querySelectorAll(".glass-card, #resultModal section, #adminModal section").forEach(function(item) {
+        item.style.backgroundColor = surfaceColor;
+        item.style.color = textColor;
+      });
+
+      document.querySelectorAll("h2, label, td, p").forEach(function(item) {
+        if (!item.closest("header") && !item.closest("main section:first-child")) {
+          item.style.color = textColor;
+        }
+      });
+
+      elements.submitButton.style.backgroundColor = primaryActionColor;
+      elements.submitButton.style.color = backgroundColor;
+
+      document.querySelectorAll("#badgeIcon, #resultScore, #adminButton").forEach(function(item) {
+        item.style.backgroundColor = primaryActionColor;
+        item.style.color = backgroundColor;
+      });
+
+      elements.closeModalButton.style.backgroundColor = textColor;
+      elements.closeModalButton.style.color = secondaryActionColor;
+      elements.closeAdminModalButton.style.backgroundColor = textColor;
+      elements.closeAdminModalButton.style.color = secondaryActionColor;
+
+      document.querySelectorAll("input, textarea").forEach(function(input) {
+        input.style.color = textColor;
+        input.style.borderColor = `${backgroundColor}30`;
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: function(config) {
+          return {
+            recolorables: [
+              {
+                get: function() { return config.background_color || defaultConfig.background_color; },
+                set: function(value) {
+                  config.background_color = value;
+                  window.elementSdk.setConfig({ background_color: value });
+                }
+              },
+              {
+                get: function() { return config.surface_color || defaultConfig.surface_color; },
+                set: function(value) {
+                  config.surface_color = value;
+                  window.elementSdk.setConfig({ surface_color: value });
+                }
+              },
+              {
+                get: function() { return config.text_color || defaultConfig.text_color; },
+                set: function(value) {
+                  config.text_color = value;
+                  window.elementSdk.setConfig({ text_color: value });
+                }
+              },
+              {
+                get: function() { return config.primary_action_color || defaultConfig.primary_action_color; },
+                set: function(value) {
+                  config.primary_action_color = value;
+                  window.elementSdk.setConfig({ primary_action_color: value });
+                }
+              },
+              {
+                get: function() { return config.secondary_action_color || defaultConfig.secondary_action_color; },
+                set: function(value) {
+                  config.secondary_action_color = value;
+                  window.elementSdk.setConfig({ secondary_action_color: value });
+                }
+              }
+            ],
+            borderables: [],
+            fontEditable: {
+              get: function() { return config.font_family || defaultConfig.font_family; },
+              set: function(value) {
+                config.font_family = value;
+                window.elementSdk.setConfig({ font_family: value });
+              }
+            },
+            fontSizeable: {
+              get: function() { return config.font_size || defaultConfig.font_size; },
+              set: function(value) {
+                config.font_size = value;
+                window.elementSdk.setConfig({ font_size: value });
+              }
+            }
+          };
+        },
+        mapToEditPanelValues: function(config) {
+          return new Map([
+            ["school_name", config.school_name || defaultConfig.school_name],
+            ["page_title", config.page_title || defaultConfig.page_title],
+            ["academic_year", config.academic_year || defaultConfig.academic_year],
+            ["intro_text", config.intro_text || defaultConfig.intro_text],
+            ["nisn_label", config.nisn_label || defaultConfig.nisn_label],
+            ["name_label", config.name_label || defaultConfig.name_label],
+            ["button_text", config.button_text || defaultConfig.button_text],
+            ["result_title", config.result_title || defaultConfig.result_title],
+            ["footer_text", config.footer_text || defaultConfig.footer_text],
+            ["students_data", config.students_data || defaultConfig.students_data]
+          ]);
+        }
+      });
+    } else {
+      onConfigChange(defaultConfig);
+    }
+
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a01e6b4b4d0ef936',t:'MTc3OTgxNTY5Nw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
